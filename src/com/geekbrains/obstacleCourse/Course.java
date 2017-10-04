@@ -4,17 +4,21 @@ import com.geekbrains.Status;
 import com.geekbrains.team.Team;
 import com.geekbrains.team.TeamMember;
 
-public class Course implements Obstacle{
+public class Course {
     private Obstacle[] obstacles;
 
     public Course(Obstacle[] obstacles) {
         this.obstacles = obstacles;
     }
 
-    @Override
     public void doIt(Team team) {
         for (TeamMember member: team.getMembers()) {
-            member.setStatus(Status.PassedDistance);
+            for (Obstacle obs :obstacles) {
+                obs.goChallenge(member);
+                if (member.getStatus()==Status.NoPassedDistance){
+                    break;
+                }
+            }
         }
     }
 

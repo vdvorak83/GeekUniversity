@@ -1,11 +1,16 @@
 package com.geekbrains.obstacleCourse;
 
-import com.geekbrains.team.Team;
+import com.geekbrains.team.TeamMember;
 
-public class Cross implements Obstacle{
+public class Cross extends Obstacle {
+
+    public Cross(int difficulty) {
+        super(difficulty);
+    }
 
     @Override
-    public void doIt(Team team) {
-
+    public void goChallenge(TeamMember member) {
+        member.run(super.getDifficulty());
     }
+
 }

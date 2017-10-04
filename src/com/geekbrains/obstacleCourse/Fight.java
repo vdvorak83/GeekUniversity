@@ -1,10 +1,14 @@
 package com.geekbrains.obstacleCourse;
 
-import com.geekbrains.team.Team;
+import com.geekbrains.team.TeamMember;
 
-public class Fight implements Obstacle {
+public class Fight extends Obstacle {
+    public Fight(int difficulty) {
+        super(difficulty);
+    }
+
     @Override
-    public void doIt(Team team) {
-
+    public void goChallenge(TeamMember member) {
+        member.fight(super.getDifficulty());
     }
 }

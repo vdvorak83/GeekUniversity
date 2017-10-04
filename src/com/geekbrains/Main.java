@@ -6,10 +6,10 @@ import com.geekbrains.team.TeamMember;
 
 public class Main {
     public static void main(String[] args) {
-        Obstacle[] obstacle = {new Cross(), new Swimming(), new Fight(),new Jumping()};
+        Obstacle[] obstacle = {new Cross(6), new Swimming(3), new Fight(9),new Jumping(1)};
         Course c = new Course(obstacle); // Создаем полосу препятствий
 
-        TeamMember[] teamMembers = {new TeamMember("Alex"),new TeamMember("Mike"),new TeamMember("Duke"),new TeamMember("Mark")};
+        TeamMember[] teamMembers = {new TeamMember("Alex",10),new TeamMember("Mike",7),new TeamMember("Duke",4),new TeamMember("Mark",2)};
         Team team = new Team(teamMembers,"DreamTeam"); // Создаем первую команду
 
         c.doIt(team); // Просим первую команду пройти полосу

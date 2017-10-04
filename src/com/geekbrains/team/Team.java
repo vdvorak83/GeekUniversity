@@ -32,7 +32,4 @@ public class Team {
         return members;
     }
 
-    public String getNameTeam() {
-        return nameTeam;
-    }
 }
