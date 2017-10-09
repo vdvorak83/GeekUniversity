@@ -1,7 +1,7 @@
-package com.geekbrains.obstacleCourse;
+package com.geekbrains.oop_lesson.obstacleCourse;
 
 
-import com.geekbrains.team.TeamMember;
+import com.geekbrains.oop_lesson.team.TeamMember;
 
 public class Jumping extends Obstacle {
 

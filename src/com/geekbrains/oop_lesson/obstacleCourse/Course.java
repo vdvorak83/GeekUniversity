@@ -1,13 +1,13 @@
-package com.geekbrains.obstacleCourse;
+package com.geekbrains.oop_lesson.obstacleCourse;
 
-import com.geekbrains.Status;
-import com.geekbrains.team.Team;
-import com.geekbrains.team.TeamMember;
+import com.geekbrains.oop_lesson.Status;
+import com.geekbrains.oop_lesson.team.Team;
+import com.geekbrains.oop_lesson.team.TeamMember;
 
 public class Course {
     private Obstacle[] obstacles;
 
-    public Course(Obstacle[] obstacles) {
+    public Course(Obstacle... obstacles) {
         this.obstacles = obstacles;
     }
 

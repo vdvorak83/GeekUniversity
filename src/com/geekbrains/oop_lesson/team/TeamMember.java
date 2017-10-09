@@ -1,6 +1,6 @@
-package com.geekbrains.team;
+package com.geekbrains.oop_lesson.team;
 
-import com.geekbrains.Status;
+import com.geekbrains.oop_lesson.Status;
 
 public class TeamMember {
     private Status status = Status.NoPassedDistance;
