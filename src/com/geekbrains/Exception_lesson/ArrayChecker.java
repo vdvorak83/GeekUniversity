@@ -17,9 +17,16 @@ public class ArrayChecker {
     }
 
     private void checkSizeArray(String[][] strings) throws MyArraySizeException {
-        if (strings.length != 4 || strings[0].length !=4){
+        if (strings.length != 4 || checkLengthStrings(strings)){
             throw new MyArraySizeException("Размер массива не соответствует 4х4");
         }
+    }
+
+    private boolean checkLengthStrings(String[][] strings) {
+        for (String [] str: strings){
+            if (str.length!=4){return true;}
+        }
+        return false;
     }
 
     public void summ(){
