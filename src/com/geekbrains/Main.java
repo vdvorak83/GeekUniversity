@@ -21,14 +21,13 @@ public class Main {
         phoneBook.addElementPhoneBook("Art","888888");
         phoneBook.addElementPhoneBook("Art","888888");
         phoneBook.addElementPhoneBook("Art","888888   ");
-        phoneBook.addElementPhoneBook("Art","888888 ");
-        phoneBook.addElementPhoneBook("Art","888888     ");
-        phoneBook.addElementPhoneBook("Art","888888");
-        phoneBook.addElementPhoneBook("Art","888888");
+        phoneBook.addElementPhoneBook("Art","888  88 8 ");
+        phoneBook.addElementPhoneBook("Art","8  8  8 888     ");
 
         System.out.println("Shum: " + phoneBook.getPhonesByName("Shum"));
         System.out.println("Art: " + phoneBook.getPhonesByName("Art"));
         System.out.println("Alex: " + phoneBook.getPhonesByName("Alex"));
+        System.out.println("Nikto:" + phoneBook.getPhonesByName(""));
     }
 
     private static void doLesson_1 (){
