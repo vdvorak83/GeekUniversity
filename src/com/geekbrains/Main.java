@@ -1,10 +1,13 @@
 package com.geekbrains;
 
 import com.geekbrains.Collections_lesson.PhoneBook;
+import com.geekbrains.Collections_lesson.WordsArray;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
+
+import java.util.*;
 
 public class Main {
 
@@ -13,6 +16,28 @@ public class Main {
     }
 
     private static void doLesson_3() {
+        doPhoneBook();
+        WordsArray wordsArray = new WordsArray(createArrayWords());
+        wordsArray.doArrayWords();
+    }
+
+    private static String[] createArrayWords() {
+        String [] strings = new String[10];
+        strings[0] = "Mama";
+        strings[1] = "Papa";
+        strings[2] = "Puma";
+        strings[3] = "Irbis";
+        strings[4] = "Mama";
+        strings[5] = "Papa";
+        strings[6] = "Kot";
+        strings[7] = "Sobaka";
+        strings[8] = "Dochka";
+        strings[9] = "Sobaka";
+        return strings;
+    }
+
+
+    private static void doPhoneBook(){
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.addElementPhoneBook("Shum","89670049109");
         phoneBook.addElementPhoneBook("Shum","89670049110");
