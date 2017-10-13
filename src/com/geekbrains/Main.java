@@ -36,7 +36,6 @@ public class Main {
         return strings;
     }
 
-
     private static void doPhoneBook(){
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.addElementPhoneBook("Shum","89670049109");
