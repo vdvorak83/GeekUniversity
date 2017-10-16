@@ -3,6 +3,7 @@ package com.geekbrains;
 import com.geekbrains.Collections_lesson.PhoneBook;
 import com.geekbrains.Collections_lesson.WordsArray;
 import com.geekbrains.Exception_lesson.ArrayChecker;
+import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
@@ -12,13 +13,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        doLesson_3();
-    }
-
-    private static void doLesson_3() {
-        doPhoneBook();
-        WordsArray wordsArray = new WordsArray(createArrayWords());
-        wordsArray.doArrayWords();
+        doLesson_4();
     }
 
     private static String[] createArrayWords() {
@@ -54,6 +49,17 @@ public class Main {
         System.out.println("Nikto:" + phoneBook.getPhonesByName(""));
     }
 
+    private static String[][] createArray() {
+        String[][] array = new String[4][4];
+        for (int i = 0; i < array.length; i++,System.out.println()) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = String.valueOf((int)(Math.random() * 10));
+                System.out.print(array[i][j] + " ");
+            }
+        }
+        return array;
+    }
+
     private static void doLesson_1 (){
         Obstacle[] obstacle = {new Cross(6), new Swimming(3), new Fight(9),new Jumping(1)};
         Course c = new Course(obstacle); // Создаем полосу препятствий
@@ -79,16 +85,14 @@ public class Main {
         arrayChecker.summ();
     }
 
-    private static String[][] createArray() {
-        String[][] array = new String[4][4];
-        for (int i = 0; i < array.length; i++,System.out.println()) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = String.valueOf((int)(Math.random() * 10));
-                System.out.print(array[i][j] + " ");
-            }
-        }
-        return array;
+    private static void doLesson_3() {
+        doPhoneBook();
+        WordsArray wordsArray = new WordsArray(createArrayWords());
+        wordsArray.doArrayWords();
     }
 
+    private static void doLesson_4(){
+        MainChatWindow chatWindow = new MainChatWindow();
+    }
 }
 
