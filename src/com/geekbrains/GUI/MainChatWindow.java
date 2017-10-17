@@ -2,8 +2,7 @@ package com.geekbrains.GUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class MainChatWindow extends JFrame{
 
@@ -35,13 +34,6 @@ public class MainChatWindow extends JFrame{
 
         JButton jb1 = new JButton("Clear");
         bottomPanel.add(jb1);
-
-        /*jb.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Hello");
-            }
-        });*/
 
         jb.addActionListener(e -> sendText()); // лямбда, выражения выше
         jb1.addActionListener(e -> jta.setText(""));
