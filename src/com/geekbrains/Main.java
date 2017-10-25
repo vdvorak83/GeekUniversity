@@ -7,14 +7,15 @@ import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
+import com.geekbrains.MultiThreading.*;
 
-import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        doLesson_4();
+        doLesson_5();
     }
+
 
     private static String[] createArrayWords() {
         String [] strings = new String[10];
@@ -93,6 +94,12 @@ public class Main {
 
     private static void doLesson_4(){
         MainChatWindow chatWindow = new MainChatWindow();
+    }
+
+    private static void doLesson_5() {
+        MultiThreadingCalculate multiThreadingCalculate = new MultiThreadingCalculate();
+        multiThreadingCalculate.oneThreadCalculate();
+        multiThreadingCalculate.twoThreadsCalculate();
     }
 }
 
