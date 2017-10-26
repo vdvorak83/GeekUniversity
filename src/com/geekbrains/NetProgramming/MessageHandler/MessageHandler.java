@@ -27,22 +27,18 @@ public class MessageHandler {
         startSocketReader();
 
         //один из вариантов - чтение консоли в потоке демоне
-        //consoleReader.setDaemon(true);
+        consoleReader.setDaemon(true);
         consoleReader.start();
     }
-    /**
-     * Слушаем сообщения из сокета
-     */
+
     private void startSocketReader() {
-
         new Thread(() -> {
-
             try {
                 while (true) {
                     String str = inputStream.readUTF();
                     if (str.equals("/end")) {
                         //второй вариант, прерываем поток
-                        consoleReader.interrupt();
+                        //consoleReader.interrupt();
                         break;
                     }
                     System.out.println(str);
@@ -55,9 +51,7 @@ public class MessageHandler {
         }).start();
     }
 
-    /**
-     * Чтение из консоли, которое можно прервать
-     */
+
     private void readConsole() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -78,7 +72,7 @@ public class MessageHandler {
                 }
 
             } catch (InterruptedException e) {
-                System.out.println("readConsole cancelled. Bye!");
+                System.out.println("read from console cancelled");
                 break;
             } catch (IOException e) {
                 System.out.println("Connection closed");
@@ -91,19 +85,16 @@ public class MessageHandler {
 
     }
 
-    /**
-     * Закрытие ресурсов
-     */
+
     private void closeResources() {
         try {
             if (socket != null && !socket.isClosed()) {
                 inputStream.close();
                 outputStream.close();
-
                 socket.close();
             }
         } catch (IOException e) {
-            System.out.println("Закрытие ресурсов выполнено не совсем чисто!");
+            System.out.println("Resources closed with errors!");
         }
     }
 }
