@@ -4,6 +4,8 @@ import com.geekbrains.Collections_lesson.PhoneBook;
 import com.geekbrains.Collections_lesson.WordsArray;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
+import com.geekbrains.NetProgramming.Client.ClientLauncher;
+import com.geekbrains.NetProgramming.Server.ServerLauncher;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
@@ -13,9 +15,12 @@ import com.geekbrains.MultiThreading.*;
 public class Main {
 
     public static void main(String[] args) {
-        doLesson_5();
+        doLesson_6();
     }
 
+    private static void doLesson_6() {
+        // run two methods in class ClientLauncher and ServerLauncher
+    }
 
     private static String[] createArrayWords() {
         String [] strings = new String[10];
