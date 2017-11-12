@@ -4,19 +4,41 @@ import com.geekbrains.Collections_lesson.PhoneBook;
 import com.geekbrains.Collections_lesson.WordsArray;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
-import com.geekbrains.NetProgramming.Client.ClientLauncher;
-import com.geekbrains.NetProgramming.Server.ServerLauncher;
+import com.geekbrains.GenericsPackage.Generics;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
 import com.geekbrains.MultiThreading.*;
 
+import java.util.ArrayList;
+
 
 public class Main {
 
     public static void main(String[] args) {
+//        String[] strings = createArrayWords();
+//        Generics<String> stringGenerics = new Generics<>(strings);
+
+        Integer[] ints = new Integer[5];
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = i;
+        }
+        Generics<Integer> stringGenerics = new Generics<>(ints);
+
+        System.out.println("Before replace");
+        stringGenerics.printArray(ints);
+        stringGenerics.replaceTwoElements(1, 4);
+        System.out.println("------------------------------------");
+        System.out.println("After replace");
+        stringGenerics.printArray(ints);
+
+
+        ArrayList<Integer> intsArrayAsList = stringGenerics.convertArrayToArrayList(ints);
+        if (intsArrayAsList instanceof ArrayList) System.out.println("Convert completed");
 
     }
+
+
 
     private static void doLesson_1 (){
         Obstacle[] obstacle = {new Cross(6), new Swimming(3), new Fight(9),new Jumping(1)};
