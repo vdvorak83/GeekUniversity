@@ -28,7 +28,7 @@ public class BoxFruit<F> {
         System.out.println("Before merging. Quantity box 2: " + boxFruit.fruits.size());
         fruits.addAll(boxFruit.fruits);
         boxFruit.fruits.clear();
-        boxFruit.fruits.trimToSize();
+        //boxFruit.fruits.trimToSize();
         System.out.println("After merging. Quantity box 1: " + fruits.size());
         System.out.println("After merging. Quantity box 2: " + boxFruit.fruits.size());
     }
