@@ -4,20 +4,51 @@ import com.geekbrains.Collections_lesson.PhoneBook;
 import com.geekbrains.Collections_lesson.WordsArray;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
-import com.geekbrains.GenericsPackage.Generics;
+import com.geekbrains.GenericsPackage.*;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
 import com.geekbrains.MultiThreading.*;
 
+import java.applet.Applet;
 import java.util.ArrayList;
 
 
 public class Main {
 
     public static void main(String[] args) {
-//        String[] strings = createArrayWords();
-//        Generics<String> stringGenerics = new Generics<>(strings);
+        doLesson_Fruits();
+    }
+
+    private static void doLesson_Fruits() {
+        BoxFruit<Apple> appleBox = new BoxFruit<Apple>(1);
+        BoxFruit<Orange> orangeBox = new BoxFruit<Orange>(1.5);
+        BoxFruit<Apple> appleBox2 = new BoxFruit<Apple>(1);
+
+        for (int i = 0; i < 3; i++) {
+            orangeBox.addFruit(new Orange());
+            appleBox.addFruit(new Apple());
+            appleBox2.addFruit(new Apple());
+        }
+
+        appleBox.addFruit(new Apple());
+        appleBox.addFruit(new Apple());
+
+        appleBox2.addFruit(new Apple());
+
+
+        System.out.println("Weight appleBox: " + appleBox.getBoxWeight());
+        System.out.println("Weight orangeBox: " + orangeBox.getBoxWeight());
+        System.out.println("Weights equals - " + appleBox.compare(orangeBox));
+        System.out.println("---------------------------------------------");
+
+        appleBox.addFruits(appleBox2);
+
+    }
+
+    private static void doGenericLesson(){
+        //String[] strings = createArrayWords();
+        //Generics<String> stringGenerics = new Generics<>(strings);
 
         Integer[] ints = new Integer[5];
         for (int i = 0; i < ints.length; i++) {
@@ -32,13 +63,9 @@ public class Main {
         System.out.println("After replace");
         stringGenerics.printArray(ints);
 
-
         ArrayList<Integer> intsArrayAsList = stringGenerics.convertArrayToArrayList(ints);
         if (intsArrayAsList instanceof ArrayList) System.out.println("Convert completed");
-
     }
-
-
 
     private static void doLesson_1 (){
         Obstacle[] obstacle = {new Cross(6), new Swimming(3), new Fight(9),new Jumping(1)};
