@@ -2,6 +2,7 @@ package com.geekbrains;
 
 import com.geekbrains.Collections_lesson.PhoneBook;
 import com.geekbrains.Collections_lesson.WordsArray;
+import com.geekbrains.DataBase_Lesson.ItemHandler;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.GenericsPackage.*;
@@ -11,13 +12,27 @@ import com.geekbrains.oop_lesson.team.TeamMember;
 import com.geekbrains.MultiThreading.*;
 
 import java.applet.Applet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        doLesson_Fruits();
+        ItemHandler itemHandler = new ItemHandler();
+        try {
+            itemHandler.connect();
+            //itemHandler.deleteTable();
+            //itemHandler.createTable();
+            //itemHandler.fillTable();
+            //itemHandler.deleteAllItems();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            itemHandler.disconnect();
+        }
     }
 
     private static void doLesson_Fruits() {
