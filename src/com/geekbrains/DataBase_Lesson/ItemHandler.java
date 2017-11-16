@@ -74,7 +74,7 @@ public class ItemHandler {
             PreparedStatement prst = connection.prepareStatement("INSERT INTO items (item,price,prodid) VALUES (?,?,?);");
             /*Savepoint savepoint = connection.setSavepoint();
             connection.rollback(savepoint);
-            connection.commit(); // если добавляли новые запси послше отката*/
+            connection.commit(); // если добавляли новые запси после отката*/
             for (int i = 1; i <= 10000; i++) {
                 prst.setString(1,"item_" + i);
                 prst.setInt(2,i*10);
