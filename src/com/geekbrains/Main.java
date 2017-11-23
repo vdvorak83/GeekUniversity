@@ -6,12 +6,16 @@ import com.geekbrains.DataBase_Lesson.ItemHandler;
 import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.GenericsPackage.*;
+import com.geekbrains.IO_lesson.FileWorker;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
 import com.geekbrains.MultiThreading.*;
 
 import java.applet.Applet;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -19,6 +23,16 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        FileWorker fileWorker = new FileWorker();
+
+        try {
+            fileWorker.readFile(new File("Resources/smallExample.txt"),10000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void doSQL_lesson() {
         ItemHandler itemHandler = new ItemHandler();
         try {
             itemHandler.connect();
