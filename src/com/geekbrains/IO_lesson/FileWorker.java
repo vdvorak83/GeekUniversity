@@ -2,6 +2,7 @@ package com.geekbrains.IO_lesson;
 
 import java.io.*;
 
+
 public class FileWorker {
     public FileWorker() {
         checkExampleFile();
@@ -44,5 +45,6 @@ public class FileWorker {
             sb.append(new String(arr,0,x));
         }
         System.out.println(sb.toString());
+
     }
 }
