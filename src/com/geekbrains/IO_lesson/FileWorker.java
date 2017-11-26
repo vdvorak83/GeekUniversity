@@ -2,7 +2,6 @@ package com.geekbrains.IO_lesson;
 
 import java.io.*;
 
-
 public class FileWorker {
     public FileWorker() {
         checkExampleFile();
@@ -36,15 +35,29 @@ public class FileWorker {
         }
     }
 
-    public void readFile(File file,int sizeBuffer) throws IOException {
+    public String readFile(File file) throws IOException {
         StringBuilder sb = new StringBuilder();
         FileInputStream fileInputStream = new FileInputStream(file);
         int x;
-        byte[] arr = new byte[sizeBuffer];
+        byte[] arr = new byte[5000];
         while ((x = fileInputStream.read(arr)) > 0){
             sb.append(new String(arr,0,x));
         }
-        System.out.println(sb.toString());
+        return sb.toString();
+    }
 
+    public void splitFiles(String nameNewFile, File... files) throws IOException {
+        File newFile = new File(nameNewFile);
+        if (newFile.exists()) newFile.delete(); newFile.createNewFile();
+        for (File file:files) {
+            fillResulFile(newFile,readFile(file));
+        }
+        System.out.println(newFile.toString());
+    }
+
+    public void fillResulFile(File resultFile,String data) throws IOException {
+        FileWriter fileWriter = new FileWriter(resultFile,true);
+        fileWriter.append(data + "\n");
+        fileWriter.flush();
     }
 }

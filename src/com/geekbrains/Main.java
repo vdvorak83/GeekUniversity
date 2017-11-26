@@ -7,6 +7,7 @@ import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.GenericsPackage.*;
 import com.geekbrains.IO_lesson.FileWorker;
+import com.geekbrains.MultiThreading.Java_3_level.methodExamples;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
@@ -23,10 +24,20 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        //new methodExamples().printABC();
+        fileWorker_lesson();
+    }
+
+    private static void fileWorker_lesson() {
         FileWorker fileWorker = new FileWorker();
 
         try {
-            fileWorker.readFile(new File("Resources/smallExample.txt"),10000);
+            //System.out.println(fileWorker.readFile(new File("Resources/smallExample.txt")));
+            fileWorker.splitFiles("Resources/resultFile.txt",new File("Resources/1.txt"),
+                                                                         new File("Resources/2.txt"),
+                                                                         new File("Resources/3.txt"),
+                                                                         new File("Resources/4.txt"),
+                                                                         new File("Resources/5.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
