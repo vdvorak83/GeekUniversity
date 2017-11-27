@@ -23,9 +23,10 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
-        //new methodExamples().printABC();
-        fileWorker_lesson();
+    public static void main(String[] args) throws IOException {
+        new methodExamples().printABC();
+        new methodExamples().addRecordsToFile("Resources/threadsFile.txt");
+        //fileWorker_lesson();
     }
 
     private static void fileWorker_lesson() {
