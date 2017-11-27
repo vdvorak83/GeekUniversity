@@ -7,6 +7,7 @@ import com.geekbrains.Exception_lesson.ArrayChecker;
 import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.GenericsPackage.*;
 import com.geekbrains.IO_lesson.FileWorker;
+import com.geekbrains.MultiThreading.Java_3_level.MFU;
 import com.geekbrains.MultiThreading.Java_3_level.methodExamples;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
@@ -24,9 +25,39 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        new methodExamples().printABC();
-        new methodExamples().addRecordsToFile("Resources/threadsFile.txt");
         //fileWorker_lesson();
+        //new methodExamples().printABC();
+        //new methodExamples().addRecordsToFile("Resources/threadsFile.txt");
+        MFU mfu = new MFU();
+        new Thread(() -> {
+            try {
+                mfu.printDoc(new File("Resources/resultFile.txt"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        new Thread(() -> {
+            try {
+                mfu.printDoc(new File("Resources/5.txt"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                mfu.printDoc(new File("Resources/4.txt"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                mfu.printDoc(new File("Resources/3.txt"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     private static void fileWorker_lesson() {
