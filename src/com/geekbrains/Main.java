@@ -25,10 +25,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        //fileWorker_lesson();
+        multiThreading_lesson_java_3();
+    }
+
+    private static void multiThreading_lesson_java_3() {
         //new methodExamples().printABC();
         //new methodExamples().addRecordsToFile("Resources/threadsFile.txt");
-        MFU mfu = new MFU();
+        MFU mfu = new MFU(0);
         new Thread(() -> {
             try {
                 mfu.printDoc(new File("Resources/resultFile.txt"));
@@ -36,10 +39,10 @@ public class Main {
                 e.printStackTrace();
             }
         }).start();
-
         new Thread(() -> {
             try {
-                mfu.printDoc(new File("Resources/5.txt"));
+                mfu.printDoc(new File("Resources/romeo.txt"));
+                mfu.scanDoc(new File("Resources/romeo.txt"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -47,6 +50,7 @@ public class Main {
         new Thread(() -> {
             try {
                 mfu.printDoc(new File("Resources/4.txt"));
+                mfu.scanDoc(new File("Resources/4.txt"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
