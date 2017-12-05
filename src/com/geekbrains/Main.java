@@ -9,6 +9,7 @@ import com.geekbrains.GenericsPackage.*;
 import com.geekbrains.IO_lesson.FileWorker;
 import com.geekbrains.MultiThreading.Java_3_level.MFU;
 import com.geekbrains.MultiThreading.Java_3_level.methodExamples;
+import com.geekbrains.TestingPackadge.TestingMethods;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        multiThreading_lesson_java_3();
+        //new TestingMethods().extractionOfArray(new Integer[]{1,7});
     }
 
     private static void multiThreading_lesson_java_3() {
