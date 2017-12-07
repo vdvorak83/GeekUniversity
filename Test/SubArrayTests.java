@@ -40,12 +40,4 @@ public class SubArrayTests {
     public void testSub2() {
         testingMethods.extractionOfArray(new Integer[] {1,7});
     }
-//    @Test
-//    public void testSub3() {
-//        Assert.assertArrayEquals(resultArray,testingMethods.extractionOfArray(array));
-//    }
-//    @Test
-//    public void testSub4() {
-//        Assert.assertArrayEquals(resultArray,testingMethods.extractionOfArray(array));
-//    }
 }
