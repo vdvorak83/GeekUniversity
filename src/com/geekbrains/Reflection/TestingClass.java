@@ -11,4 +11,21 @@ public class TestingClass {
     public void afterSuite(){
 
     }
+
+    @Test(priority = 1)
+    public void test1(){
+
+    }
+    @Test(priority = 2)
+    public void test2(){
+
+    }
+    @Test(priority = 2)
+    public void test3(){
+
+    }
+    @Test(priority = 3)
+    public void test4(){
+
+    }
 }
