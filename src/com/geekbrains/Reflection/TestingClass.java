@@ -1,17 +1,19 @@
 package com.geekbrains.Reflection;
 
-public class TestingClass {
+import com.geekbrains.MultiThreading.MultiThreadingCalculate;
+
+import java.io.Serializable;
+
+public class TestingClass  {
 
     @BeforeSuite
     public void beforeSuiteMethod(){
         printTestMessage("Bufore suite test");
     }
-
     @AfterSuite
     public void afterSuite(){
         printTestMessage("After suite test");
     }
-
     @Test(priority = 1)
     public void test1(){
         printTestMessage("Test 1");
@@ -28,7 +30,6 @@ public class TestingClass {
     public void test4(){
         printTestMessage("Test 4");
     }
-
     @Test(priority = 4)
     public void test5(){
         printTestMessage("Test 5");
@@ -40,6 +41,10 @@ public class TestingClass {
     @Test(priority = 9)
     public void test7(){
         printTestMessage("Test 7");
+    }
+    @Test(priority = 8)
+    public static void test8(){
+        System.out.println(("Test 8"));
     }
 
     public void printTestMessage(String textMessage){

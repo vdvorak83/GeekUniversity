@@ -1,14 +1,20 @@
 package com.geekbrains.Reflection;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class MainReflectionClass {
     public static void main(String[] args) throws Exception {
-         start(TestingClass.class);
+        start(TestingClass.class);
+    }
+
+    private static void printMethods(Class c) {
+        Method[] methods = c.getDeclaredMethods();
+        for (Method m :
+                methods) {
+            System.out.println(m.getName());
+        }
     }
 
     public static void start(Class c) throws Exception {
