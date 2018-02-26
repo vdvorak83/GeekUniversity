@@ -8,16 +8,13 @@ import com.geekbrains.GUI.MainChatWindow;
 import com.geekbrains.GenericsPackage.*;
 import com.geekbrains.IO_lesson.FileWorker;
 import com.geekbrains.MultiThreading.Java_3_level.MFU;
-import com.geekbrains.MultiThreading.Java_3_level.methodExamples;
-import com.geekbrains.TestingPackadge.TestingMethods;
+import com.geekbrains.Patterns.Fabrica.*;
 import com.geekbrains.oop_lesson.obstacleCourse.*;
 import com.geekbrains.oop_lesson.team.Team;
 import com.geekbrains.oop_lesson.team.TeamMember;
 import com.geekbrains.MultiThreading.*;
 
-import java.applet.Applet;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +23,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        //new TestingMethods().extractionOfArray(new Integer[]{1,7});
+        // an array of creators
+        Creator[] creators = {new ConcernBmw(),new ConcernMercedes()};
+        // iterate over creators and create products
+        for (Creator creator: creators) {
+            Car car = creator.factoryMethod();
+            System.out.printf("Created " + car.getInfo() + " {%s}\n", car.getClass());
+        }
     }
 
     private static void multiThreading_lesson_java_3() {
