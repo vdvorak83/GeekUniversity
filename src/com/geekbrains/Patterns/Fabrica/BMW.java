@@ -1,6 +1,6 @@
 package com.geekbrains.Patterns.Fabrica;
 
-public class BMW implements Car{
+public class BMW extends Car{
     @Override
     public String getInfo() {
         return "BMW";

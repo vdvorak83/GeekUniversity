@@ -1,5 +1,5 @@
 package com.geekbrains.Patterns.Fabrica;
 
-public interface Car {
-    String getInfo();
+public abstract class Car {
+    public abstract String getInfo();
 }

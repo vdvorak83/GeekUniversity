@@ -1,5 +1,5 @@
 package com.geekbrains.Patterns.Fabrica;
 
-public interface Creator {
-    Car factoryMethod();
+public abstract class Creator {
+    public abstract Car factoryMethod();
 }
